@@ -1,0 +1,52 @@
+[debug] [2025-03-22T19:16:36.459Z] ----------------------------------------------------------------------
+[debug] [2025-03-22T19:16:36.465Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tsepo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-03-22T19:16:36.466Z] CLI Version:   13.35.1
+[debug] [2025-03-22T19:16:36.466Z] Platform:      win32
+[debug] [2025-03-22T19:16:36.466Z] Node Version:  v22.11.0
+[debug] [2025-03-22T19:16:36.466Z] Time:          Sat Mar 22 2025 21:16:36 GMT+0200 (South Africa Standard Time)
+[debug] [2025-03-22T19:16:36.467Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-22T19:16:36.481Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-22T19:16:36.482Z] > authorizing via signed-in user (zamah0007@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Tsepo\Documents\RateMy\rateyourres
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2025-03-22T19:19:22.001Z] Checked if tokens are valid: true, expires at: 1742674528984
+[debug] [2025-03-22T19:19:22.001Z] Checked if tokens are valid: true, expires at: 1742674528984
+[debug] [2025-03-22T19:19:22.004Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2025-03-22T19:19:22.004Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"rate-your-res-tsepo","name":"rate-your-res-tsepo"}
+[debug] [2025-03-22T19:19:24.134Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2025-03-22T19:19:24.134Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/create_project.global.7124065861285884317"}
+[debug] [2025-03-22T19:19:24.136Z] Checked if tokens are valid: true, expires at: 1742674528984
+[debug] [2025-03-22T19:19:24.136Z] Checked if tokens are valid: true, expires at: 1742674528984
+[debug] [2025-03-22T19:19:24.136Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.7124065861285884317 [none]
+[debug] [2025-03-22T19:19:25.578Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.7124065861285884317 200
+[debug] [2025-03-22T19:19:25.578Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.7124065861285884317 {"name":"operations/create_project.global.7124065861285884317","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"108101988592","projectId":"rate-your-res-tsepo","lifecycleState":"ACTIVE","name":"rate-your-res-tsepo","createTime":"2025-03-22T19:19:22.410158Z"}}
+[debug] [2025-03-22T19:19:25.580Z] Checked if tokens are valid: true, expires at: 1742674528984
+[debug] [2025-03-22T19:19:25.581Z] Checked if tokens are valid: true, expires at: 1742674528984
+[debug] [2025-03-22T19:19:25.581Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/rate-your-res-tsepo:addFirebase [none]
+[debug] [2025-03-22T19:19:26.997Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/rate-your-res-tsepo:addFirebase 403
+[debug] [2025-03-22T19:19:26.997Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/rate-your-res-tsepo:addFirebase {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-03-22T19:19:26.998Z] Request to https://firebase.googleapis.com/v1beta1/projects/rate-your-res-tsepo:addFirebase had HTTP Error: 403, The caller does not have permission
+[debug] [2025-03-22T19:19:27.357Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/rate-your-res-tsepo:addFirebase had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Tsepo\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\Tsepo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to add Firebase to Google Cloud Platform project. See firebase-debug.log for more info.
