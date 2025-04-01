@@ -55,3 +55,20 @@ export const getResidences = async (schoolId) => {
 export const userIsAdmin = async (uid) => {
   return (await getDoc(doc(db, 'admins', uid))).exists();
 }
+
+export const schoolExists = async (schoolId) => {
+
+  return  (
+    await getDocs(
+      query(
+        collection(db, 'schools'),
+        where('schoolId', '==', schoolId)
+      )
+    )
+  ).docs.map(
+      (doc) => ({
+        ...doc.data(),
+        id: doc.id
+      })
+    ).length > 0;
+};

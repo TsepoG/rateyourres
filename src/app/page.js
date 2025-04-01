@@ -2,6 +2,10 @@ import {
   getSchools,
 } from "@/lib/reads";
 
+import {
+  AddSchool,
+} from "@/containers/admin/AddSchool";
+
 import Link from "next/link";
 
 export default async function Home() {
@@ -29,6 +33,8 @@ export default async function Home() {
           ))
         }
       </div>
+
+      <AddSchool/>
     </div>
   );
 }
