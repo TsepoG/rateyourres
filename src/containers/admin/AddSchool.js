@@ -11,7 +11,10 @@ import {
 import {
   PrimaryButton,
 } from "@/components/Button";
-import { setSchool } from "@/lib/writes";
+
+import {
+  setSchool,
+} from "@/lib/writes";
 
 export const AddSchool = () => {
 
