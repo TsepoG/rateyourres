@@ -6,7 +6,10 @@ import {
 import {
   db,
 } from "./firebase";
-import { schoolExists } from "./reads";
+
+import {
+  schoolExists,
+} from "./reads";
 
 const cleanString = (str) => {
 
