@@ -1,7 +1,12 @@
 import {
+  AddResidence,
+} from "@/containers/admin/AddResidence";
+
+import {
   getResidences,
   getSchoolById,
 } from "@/lib/reads";
+
 import Link from "next/link";
 
 export async function generateMetadata({ params }) {
@@ -20,6 +25,7 @@ export default async function Page ({ params }) {
   const {schoolId} = await params;
   const school = await getSchoolById(schoolId);
   const residences = await getResidences(schoolId);
+  const schoolName = school.schoolName;
 
   return (
     <div className={'space-y-8'}>
@@ -34,7 +40,7 @@ export default async function Page ({ params }) {
         </Link>
 
         <h1 className={'text-3xl font-bold'}>
-          {school.schoolName} Residences
+          {schoolName} Residences
         </h1>
 
         <p>
@@ -59,6 +65,11 @@ export default async function Page ({ params }) {
           )
         })}
       </ul>
+
+      <AddResidence
+        schoolId={schoolId}
+        schoolName={schoolName}
+      />
     </div>
   );
 }

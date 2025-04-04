@@ -72,3 +72,24 @@ export const schoolExists = async (schoolId) => {
       })
     ).length > 0;
 };
+
+export const residenceExists = async (
+  residenceId,
+  schoolId
+) => {
+  
+  return (
+    await getDocs(
+      query(
+        collection(db, 'residences'),
+        where('schoolId', '==', schoolId),
+        where('residenceId', '==', residenceId)
+      )
+    )
+  ).docs.map(
+    (doc) => ({
+      ...doc.data(),
+      id: doc.id
+    })
+  ).length > 0;
+}
