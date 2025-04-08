@@ -58,3 +58,6 @@ export const setResidence = async (
     schoolName: schoolName
   });
 }
+
+// Create a function that checks if user doesn't already have a review for this residence in this school
+// After create a function to write review into db
