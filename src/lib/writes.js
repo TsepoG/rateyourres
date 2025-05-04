@@ -1,6 +1,9 @@
 import {
   addDoc,
   collection,
+  doc,
+  Timestamp,
+  updateDoc,
 } from "firebase/firestore";
 
 import {
@@ -9,6 +12,7 @@ import {
 
 import {
   residenceExists,
+  reviewExists,
   schoolExists,
 } from "./reads";
 
@@ -59,5 +63,26 @@ export const setResidence = async (
   });
 }
 
-// Create a function that checks if user doesn't already have a review for this residence in this school
-// After create a function to write review into db
+export const setReview = async (review) => {
+
+  const docExists = await reviewExists(review?.residenceId, review?.schoolId, review?.userId);
+
+  if (docExists.length > 0) {
+
+    return await updateDoc(doc(db, 'reviews', docExists[0].id), {
+      comment: review?.comment,
+      rating: review?.rating,
+    });
+  }
+
+  return await addDoc(collection(db, 'reviews'),{
+    comment: review?.comment,
+    date: Timestamp.now(),
+    rating: review?.rating,
+    residenceId: review?.residenceId,
+    residenceName: review?.residenceName,
+    schoolId: review?.schoolId,
+    schoolName: review?.schoolName,
+    uid: review?.userId
+  });
+}

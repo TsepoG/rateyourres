@@ -131,3 +131,26 @@ export const getResidenceById = async (
     })
   )[0];
 };
+
+export const reviewExists = async (
+  residenceId,
+  schoolId,
+  userId,
+) => {
+  
+  return (
+    await getDocs(
+      query(
+        collection(db, 'reviews'),
+        where('uid', '==', userId),
+        where('residenceId', '==', residenceId),
+        where('schoolId', '==', schoolId)
+      )
+    )
+  ).docs.map(
+    (doc) => ({
+      ...doc.data(),
+      id: doc.id
+    })
+  );
+}
